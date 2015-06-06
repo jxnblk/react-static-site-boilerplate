@@ -8,11 +8,11 @@ var Index = require('./components/Index.jsx')
 var About = require('./components/About.jsx')
 
 var Routes = (
-  <Route handler={Root} path="/">
+  <Route handler={Root} path='/'>
     <DefaultRoute handler={Index} />
-    <Route path="/about" handler={About} />
+    <Route path='/about' handler={About} />
   </Route>
-);
+)
 
 module.exports = Routes
 

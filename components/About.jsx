@@ -2,7 +2,7 @@
 var React = require('react')
 
 var About = React.createClass({
-  render: function() {
+  render: function () {
     return (
       <main>
         About component

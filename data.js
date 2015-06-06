@@ -16,7 +16,7 @@ module.exports = {
         variables: {
           'font-family': '"Avenir Next", "Helvetica Neue", Helvetica, sans-serif'
         }
-      },
+      }
     }
   })
 }

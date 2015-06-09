@@ -6,18 +6,6 @@ module.exports = {
   routes: [
     '/',
     '/about'
-  ],
-  css: cssnext('@import "basscss";', {
-    compress: true,
-    features: {
-      rem: false,
-      colorRgba: false,
-      customProperties: {
-        variables: {
-          'font-family': '"Avenir Next", "Helvetica Neue", Helvetica, sans-serif'
-        }
-      }
-    }
-  })
+  ]
 }
 

@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "webpack": "webpack --progress --colors",
+    "prod": "webpack -p --progress --colors",
     "dev": "webpack-dev-server --progress --colors",
     "start": "npm run dev"
   },
@@ -12,7 +13,9 @@
   "license": "MIT",
   "devDependencies": {
     "basscss": "^6.1.6",
+    "css-loader": "^0.14.4",
     "cssnext": "^1.6.0",
+    "cssnext-loader": "^1.0.1",
     "jsx-loader": "^0.13.2",
     "node-libs-browser": "^0.5.2",
     "react": "^0.13.3",

@@ -4,25 +4,23 @@ var Router = require('react-router')
 var RouteHandler = Router.RouteHandler
 var Header = require('./Header.jsx')
 
+var css = require('../css/base.css')
+
 var Root = React.createClass({
   propTypes: {
-    title: React.PropTypes.string,
-    css: React.PropTypes.string
+    title: React.PropTypes.string
   },
 
   render: function () {
     var initialProps = {
       __html: safeStringify(this.props)
     }
-    var css = {
-      __html: this.props.css
-    }
 
     return (
       <html>
         <head>
           <title>{this.props.title}</title>
-          <style dangerouslySetInnerHTML={css} />
+          <style dangerouslySetInnerHTML={{ __html: css }} />
         </head>
         <body className='p2'>
           <Header {...this.props} />

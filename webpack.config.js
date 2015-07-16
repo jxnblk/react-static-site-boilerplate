@@ -1,3 +1,4 @@
+
 var StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin')
 var data = require('./data')
 
@@ -13,7 +14,8 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.jsx$/, loader: 'jsx-loader' },
-      { test: /\.css/, loader: 'css-loader!cssnext-loader' }
+      { test: /\.json$/, loader: 'json-loader' },
+      { test: /\.css/, loader: 'css-loader?-minimize!cssnext-loader' }
     ]
   },
 
@@ -28,6 +30,10 @@ module.exports = {
       pseudoElements: false,
       colorRgba: false
     }
+  },
+
+  node: {
+    fs: 'empty'
   }
 
 }

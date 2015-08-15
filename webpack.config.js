@@ -13,7 +13,7 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.jsx$/, loader: 'jsx-loader' },
-      { test: /\.css/, loader: 'css-loader!cssnext-loader' }
+      { test: /\.css$/, loader: 'css-loader!cssnext-loader' }
     ]
   },
 

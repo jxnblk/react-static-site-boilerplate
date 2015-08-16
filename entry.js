@@ -5,7 +5,6 @@ import Location from 'react-router/lib/Location'
 import routes from './routes'
 
 if (typeof document !== 'undefined') {
-  // var initialProps = JSON.parse(document.getElementById('initial-props').innerHTML)
   const { history } = require('react-router/lib/BrowserHistory')
   React.render(<Router routes={routes} history={history} />, document)
 }

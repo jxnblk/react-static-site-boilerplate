@@ -20,7 +20,7 @@ module.exports = {
   },
 
   plugins: [
-    new StaticRenderPlugin('bundle.js', data.routes)
+    new StaticRenderPlugin('bundle.js', data.routes, data)
   ],
 
   cssnext: {

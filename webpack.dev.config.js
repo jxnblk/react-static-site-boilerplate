@@ -38,7 +38,7 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
-    new StaticRenderPlugin('static.js', data.routes)
+    new StaticRenderPlugin('static.js', data.routes, data)
   ],
 
   devServer: {

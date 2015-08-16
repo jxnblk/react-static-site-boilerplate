@@ -14,7 +14,7 @@ export default class Root extends React.Component {
         </head>
         <body className='p2'>
           <Header {...this.props} />
-          {this.props.children}
+          {React.cloneElement(this.props.children, this.props)}
           <script src='/bundle.js' />
         </body>
       </html>

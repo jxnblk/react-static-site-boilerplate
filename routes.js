@@ -1,10 +1,10 @@
 
-var React = require('react')
-var Root = require('./components/Root.jsx')
-var Index = require('./components/Index.jsx')
-var About = require('./components/About.jsx')
+import React from 'react'
+import Root from './components/Root.jsx'
+import Index from './components/Index.jsx'
+import About from './components/About.jsx'
 
-var routes = [
+const routes = [
   {
     component: Root,
     childRoutes: [
@@ -14,5 +14,5 @@ var routes = [
   }
 ]
 
-module.exports = routes
+export default routes
 

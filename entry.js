@@ -1,19 +1,19 @@
 
-var React = require('react')
-var Router = require('react-router').Router
-var Location = require('react-router/lib/Location')
-var routes = require('./routes')
+import React from 'react'
+import { Router } from 'react-router'
+import Location from 'react-router/lib/Location'
+import routes from './routes'
 
 if (typeof document !== 'undefined') {
   // var initialProps = JSON.parse(document.getElementById('initial-props').innerHTML)
-  var history = require('react-router/lib/BrowserHistory').history
+  const { history } = require('react-router/lib/BrowserHistory')
   React.render(<Router routes={routes} history={history} />, document)
 }
 
-module.exports = function render (path, props, callback) {
-  var location = new Location(path)
+export default function render (path, props, callback) {
+  const location = new Location(path)
   Router.run(routes, location, function (err, state) {
-    var html = React.renderToString(<Router {...state} {...props} />)
+    const html = React.renderToString(<Router {...state} {...props} />)
     callback(`<!DOCTYPE html>${html}`)
   })
 }

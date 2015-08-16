@@ -1,15 +1,11 @@
 
-var React = require('react')
-var Header = require('./Header.jsx')
+import React from 'react'
+import Header from './Header'
+import css from '../css/base.css'
 
-var css = require('../css/base.css')
+export default class Root extends React.Component {
 
-var Root = React.createClass({
-  propTypes: {
-    title: React.PropTypes.string
-  },
-
-  render: function () {
+  render() {
     return (
       <html>
         <head>
@@ -24,7 +20,10 @@ var Root = React.createClass({
       </html>
     )
   }
-})
 
-module.exports = Root
+}
+
+Root.propTypes = {
+  title: React.PropTypes.string
+}
 

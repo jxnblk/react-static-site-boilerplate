@@ -1,14 +1,10 @@
 
-var React = require('react')
-var Router = require('react-router')
-var Link = Router.Link
+import React from 'react'
+import { Link } from 'react-router'
 
-var Header = React.createClass({
-  propTypes: {
-    title: React.PropTypes.string
-  },
+export default class Header extends React.Component {
 
-  render: function () {
+  render() {
     return (
       <header className='py2'>
         <h1 className='mt0'>{this.props.title}</h1>
@@ -19,7 +15,10 @@ var Header = React.createClass({
       </header>
     )
   }
-})
 
-module.exports = Header
+}
+
+Header.propTypes = {
+  title: React.PropTypes.string
+}
 

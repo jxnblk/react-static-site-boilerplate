@@ -1,7 +1,5 @@
 
 var React = require('react')
-var Router = require('react-router')
-var RouteHandler = Router.RouteHandler
 var Header = require('./Header.jsx')
 
 var css = require('../css/base.css')
@@ -12,10 +10,6 @@ var Root = React.createClass({
   },
 
   render: function () {
-    var initialProps = {
-      __html: safeStringify(this.props)
-    }
-
     return (
       <html>
         <head>
@@ -24,21 +18,13 @@ var Root = React.createClass({
         </head>
         <body className='p2'>
           <Header {...this.props} />
-          <RouteHandler {...this.props} />
-          <script
-            id='initial-props'
-            type='application/json'
-            dangerouslySetInnerHTML={initialProps} />
+          {this.props.children}
           <script src='/bundle.js' />
         </body>
       </html>
     )
   }
 })
-
-function safeStringify (obj) {
-  return JSON.stringify(obj).replace(/<\/script/g, '<\\/script').replace(/<!--/g, '<\\!--')
-}
 
 module.exports = Root
 

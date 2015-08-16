@@ -1,5 +1,6 @@
 
-var StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin')
+require('babel/register')
+var StaticRenderPlugin = require('static-render-webpack-plugin')
 var data = require('./data')
 
 module.exports = {
@@ -19,7 +20,7 @@ module.exports = {
   },
 
   plugins: [
-    new StaticSiteGeneratorPlugin('bundle.js', data.routes, data)
+    new StaticRenderPlugin('bundle.js', data.routes)
   ],
 
   cssnext: {

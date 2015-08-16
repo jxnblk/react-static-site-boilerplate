@@ -1,6 +1,7 @@
 
+require('babel/register')
 var webpack = require('webpack')
-var StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin')
+var StaticRenderPlugin = require('static-render-webpack-plugin')
 var data = require('./data')
 
 module.exports = {
@@ -25,7 +26,11 @@ module.exports = {
 
   module: {
     loaders: [
-      { test: /\.jsx$/, loaders: ['react-hot', 'babel'] },
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        loaders: ['react-hot', 'babel']
+      },
       { test: /\.css$/, loader: 'css!cssnext' }
     ]
   },
@@ -33,7 +38,7 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
-    new StaticSiteGeneratorPlugin('static.js', data.routes, data)
+    new StaticRenderPlugin('static.js', data.routes)
   ],
 
   devServer: {

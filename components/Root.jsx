@@ -4,6 +4,7 @@ var Router = require('react-router')
 var RouteHandler = Router.RouteHandler
 var Header = require('./Header.jsx')
 
+var basscss = require('basscss/css/basscss.css')
 var css = require('../css/base.css')
 
 var Root = React.createClass({
@@ -20,6 +21,7 @@ var Root = React.createClass({
       <html>
         <head>
           <title>{this.props.title}</title>
+          <style dangerouslySetInnerHTML={{ __html: basscss }} />
           <style dangerouslySetInnerHTML={{ __html: css }} />
         </head>
         <body className='p2'>

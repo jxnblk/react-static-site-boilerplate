@@ -20,6 +20,7 @@ var Root = React.createClass({
     return (
       <html>
         <head>
+          <meta charSet="UTF-8" />
           <title>{this.props.title}</title>
           <style dangerouslySetInnerHTML={{ __html: basscss }} />
           <style dangerouslySetInnerHTML={{ __html: css }} />
@@ -43,4 +44,3 @@ function safeStringify (obj) {
 }
 
 module.exports = Root
-
